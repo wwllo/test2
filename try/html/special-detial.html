@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../less/reset.css">
+    <link rel="stylesheet" href="../less/special-detial.css">
+    <script src="../js/rem.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="../imgs/login/arrow-back@2x.png" alt="" /> 专题
+        <span><img src="../imgs/variety/icon_search@2x.png" alt=""></span>
+    </div>
+    <p class="hr"><img src="../imgs/login/icon_heng_line@2x.png" alt="" /></p>
+    <video src="../imgs/special_detial/a6y.Ogg" controls class="video"></video>
+    <div class="title">
+        <span>
+            <img src="../imgs/special_detial/1.png" alt="">
+        </span>
+        <p class="text">
+            北京“首虎”吕锡文被查封
+        </p>
+    </div>
+    <div id="box">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550140479&di=574f1e22bcf020735cc9a38ce2d2b044&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012c0258d8bb35a801219c77694def.gif" class="imgs" alt="" v-show=isshow>
+        <div class="content" v-for='item in all'>
+            <img :src=item.img alt="">
+            <div class="texts">
+                <p class="titles">
+                    {{ item.title }}
+                </p>
+                <p class="img1">
+                    <img :src=item.img1 alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el:"#box",
+        data:{
+            all:[],
+            isshow:false,
+        },
+        beforeCreate () {
+            this.isshow = true;
+        },
+        mounted () {
+            this.isshow = false;
+            var that = this;
+            axios.get('../json/special-detial.json').then(function(res){
+                console.log(res);
+                that.all = res.data.content;
+            }).catch(function(err){
+                console.log(err);
+            })
+        }
+    })
+</script>

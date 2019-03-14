@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../less/reset.css" />
+    <link rel="stylesheet" href="../less/look-record.css" />
+    <script src="../js/rem.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/zepto.js"></script>
+    <script src="../js/zepto.touch.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="../imgs/login/arrow-back@2x.png" alt="" /> 观看记录
+        <span><img src="../imgs/variety/icon_search@2x.png" alt=""></span>
+    </div>
+    <p class="hr"><img src="../imgs/login/icon_heng_line@2x.png" alt="" /></p>
+    <div id="box">
+        <img src="http://img.zcool.cn/community/012d11571d7d0d32f875a399e1fe9e.gif" alt="" v-show=isshow>
+        <div class="main" v-for="item in all">
+            <p class="img1"><img :src=item.img alt="" ></p> 
+            <p class="img2"><img :src=item.img_ alt=""></p> 
+            <div class="text">
+                <p class="title">
+                    {{ item.title }}
+                </p>
+                <p class="one">
+                    {{ item.one }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="first">全选</p>
+        <p class="second">删除</p>
+    </div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el:"#box",
+        data:{
+            all:[],
+            isshow:false
+        },
+        beforeCreate () {
+            this.isshow = true;
+        },
+        mounted () {
+            this.isshow = false;
+            var that = this;
+            axios.get("../json/look-record.json").then(function(res){
+                console.log(res);
+                that.all = res.data.data;
+                console.log(that.all);
+            }).catch(function(err){
+                console.log(err);
+            })
+        }
+    })  
+</script>

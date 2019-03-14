@@ -1,0 +1,27 @@
+{
+    "data":[
+       {"img":"../imgs/index/com.png","title":"CCTV5","img1":"../imgs/index/11.png","num":"82.0万人","info":"现场直播:2015世界职业拳王。。。","img2":"../imgs/index/5.png","span":"1","img3":"../imgs/index/btn-s-video@2x.png"},
+       {"img":"../imgs/index/17.png","title":"电影频道","img1":"../imgs/index/11.png","num":"11.0万人","info":"光影星播客","img2":"../imgs/index/5.png","span":"2","img3":"../imgs/index/btn-s-video@2x.png"},
+       {"img":"../imgs/index/10.png","title":"CCTV5","img1":"../imgs/index/11.png","num":"82.0万人","info":"现场直播:2015世界职业拳王。。。","img2":"../imgs/index/5.png","span":"3","img3":"../imgs/index/btn-s-video@2x.png"},
+       {"img":"../imgs/index/copy 2.png","title":"电影频道","img1":"../imgs/index/11.png","num":"11.0万人","info":"光影星播客","img2":"../imgs/index/5.png","span":"4","img3":"../imgs/index/btn-s-video@2x.png"},
+       {"img":"../imgs/index/copy.png","title":"CCTV5","img1":"../imgs/index/11.png","num":"82.0万人","info":"现场直播:2015世界职业拳王。。。","img3":"../imgs/index/btn-s-video@2x.png"},
+       {"img":"../imgs/index/copy3.png","title":"电影频道","img1":"../imgs/index/11.png","num":"11.0万人","info":"光影星播客","img3":"../imgs/index/btn-s-video@2x.png"}
+    ],
+    "info":[
+        {"img":"../imgs/index/com.png","title":"北上广不相信眼泪","info":"朱亚文浪漫告白马伊琍"},
+        {"img":"../imgs/index/17.png","title":"幸福归来","info":"朱亚文浪漫告白马伊琍"},
+        {"img":"../imgs/index/10.png","title":"幸福归来","info":"朱亚文浪漫告白马伊琍"},
+        {"img":"../imgs/index/copy 2.png","title":"幸福归来","info":"朱亚文浪漫告白马伊琍"}
+     ],
+     "zong":[
+        {"img":"../imgs/index/com.png","title":"CCTV5","info":"现场直播:2015世界职业拳王。。。"},
+        {"img":"../imgs/index/17.png","title":"电影频道","info":"光影星播客"}
+     ],
+     "sport":[
+        {"img":"../imgs/index/img2.png","title":"花边体育","info":"更新至第49期","img2":"../imgs/index/new@2x.png"},
+        {"img":"../imgs/index/img3.png","title":"花边体育","info":"更新至第49期"},
+        {"img":"../imgs/index/img4.png","title":"实况足球","info":"更新至第49期"},
+        {"img":"../imgs/index/img5.png","title":"爆笑体育","info":"更新至第49期"}
+     ]
+    
+}

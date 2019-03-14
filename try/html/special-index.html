@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../less/reset.css">
+    <link rel="stylesheet" href="../less/special-index.css">
+    <script src="../js/rem.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../imgs/special_index/arrow-back@2x.png" alt="" /> 专题
+        <span><img src="../imgs/special_index/icon_search@2x.png" alt=""></span>
+    </div>
+    <div class="xian"><img src="../imgs/index/icon_heng_line@2x.png" alt=""></div>
+    <div class="img_">
+        <img class="img" src="../imgs/special_index/bg.png" alt=""> 
+    </div>
+    <div id="box">
+        <div class="content" v-for="item in data">
+            <img :src=item.img alt="">
+            <div class="text">
+                <p class="title">{{item.title}}</p>
+                <p class="one">{{item.one}}</p>
+                <p class="two">{{item.two}}</p>
+                <img class="zhuan" src="../imgs/special_index/1 .png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#box",
+        data:{
+            data:[]
+        },
+        mounted() {
+            this.img = false;
+            var that = this;
+            axios.get('../json/special.index.json').then(function (res) {
+                console.log(res);
+                that.data = res.data.data;
+                console.log(that.data);
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+    })
+</script>
+</html>

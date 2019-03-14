@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../less/reset.css">
+    <link rel="stylesheet" href="../less/second-page.css">
+    <script src="../js/rem.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../imgs/login/arrow-back@2x.png" alt="" /> 新闻头条
+        <span><img src="../imgs/variety/icon_search@2x.png" alt=""></span>
+    </div>
+    <p class="hr"><img src="../imgs/login/icon_heng_line@2x.png" alt="" /></p>
+    <div id="box">
+        <img class="imgs" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550140479&di=574f1e22bcf020735cc9a38ce2d2b044&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012c0258d8bb35a801219c77694def.gif"
+            alt="" v-show=img>
+        <div class="content" v-for="item in all">
+            <img :src=item.img alt="">
+            <div class="text">
+                <p class="title">{{ item.title }}</p>
+                <p class="one">{{ item.one }}</p>
+                <p class="two">{{ item.two }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            all: [],
+            img: false
+        },
+        beforeCreate() {
+            this.img = true;
+        },
+        mounted() {
+            this.img = false;
+            var that = this;
+            axios.get('../json/second-page.json').then(function (res) {
+                that.all = res.data.content;
+                console.log(that.all);
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+    })
+</script>

@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑';
+}
+.header {
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.3rem;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+.header img {
+  float: left;
+  padding-top: 0.1rem;
+  width: 0.36rem;
+  height: 0.3rem;
+  margin-left: 0.25rem;
+}
+.header span {
+  float: right;
+  margin-right: 0.25rem;
+}
+.header span img {
+  width: 0.34rem;
+  height: 0.34rem;
+}
+.hr {
+  width: 100%;
+}
+.hr img {
+  width: 100%;
+}
+.ul {
+  width: 100%;
+  display: flex;
+}
+.ul li {
+  flex: 1;
+  font-size: 0.24rem;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+.ul li a {
+  color: black;
+}
+.ul li img {
+  width: 0.2rem;
+  height: 0.13rem;
+}
+.ul .kr {
+  box-sizing: border-box;
+  border-bottom: 0.02rem #246cff solid;
+}
+.ul .kr a {
+  color: #246cff;
+}
+.swiper-slide {
+  width: 100%;
+}
+.swiper-slide img {
+  width: 100%;
+}
+.name {
+  width: 100%;
+  display: flex;
+}
+.name li {
+  flex: 1;
+  font-size: 0.24rem;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+.name li a {
+  color: #cacaca;
+}
+.name .first {
+  border-bottom: 0.03rem #246cff solid;
+  box-sizing: border-box;
+}
+.name .first a {
+  color: #246cff;
+}
+.imgs_one {
+  width: 100%;
+  display: flex;
+  margin-top: 0.15rem;
+}
+.imgs_one li {
+  flex: 1;
+  text-align: center;
+}
+.imgs_one li img {
+  width: 3rem;
+  height: 2rem;
+}
+.imgs_one li p {
+  font-size: 0.2rem;
+  text-align: left;
+  text-indent: 0.1rem;
+}
+.imgs_two {
+  width: 100%;
+  display: flex;
+  margin-top: 0.15rem;
+}
+.imgs_two li {
+  flex: 1;
+  text-align: center;
+}
+.imgs_two li img {
+  width: 1.96rem;
+  height: 2.94rem;
+}
+.imgs_two li p {
+  font-size: 0.2rem;
+  text-align: left;
+  text-indent: 0.1rem;
+}
+.title {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding-bottom: 0.15rem;
+  overflow: hidden;
+  border-bottom: 0.01rem #cccccc solid;
+}
+.title img {
+  width: 0.06rem;
+  height: 0.3rem;
+  margin-left: 0.15rem;
+  vertical-align: -0.05rem;
+}
+.title .one {
+  font-size: 0.24rem;
+  margin-left: 0.1rem;
+}
+.title .two {
+  float: right;
+  font-size: 0.22rem;
+  margin-right: 0.15rem;
+}
+.box {
+  width: 100%;
+  padding-bottom: 0.4rem;
+}

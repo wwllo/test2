@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../less/reset.css">
+    <link rel="stylesheet" href="../less/variety.css">
+    <script src="../js/rem.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../imgs/login/arrow-back@2x.png" alt="" /> 娱乐综艺
+        <span><img src="../imgs/variety/icon_search@2x.png" alt=""></span>
+    </div>
+    <p class="hr"><img src="../imgs/login/icon_heng_line@2x.png" alt="" /></p>
+    <div class="title">
+        <ul class="one">
+            <li class="blue">最新</li>
+            <li>最热</li>
+        </ul>
+        <ul class="one">
+            <li class="blue">全部</li>
+            <li>北京</li>
+            <li>湖南</li>
+            <li>浙江</li>
+            <li>安徽</li>
+        </ul>
+        <ul class="one">
+            <li class="blue">全部</li>
+            <li>真人秀</li>
+            <li>情感</li>
+            <li>访谈</li>
+            <li>脱口秀</li>
+        </ul>
+    </div>
+    <div id="box">
+        <img src="http://img.zcool.cn/community/012d11571d7d0d32f875a399e1fe9e.gif" alt="" class="imgs" v-show=img>
+        <div class="content" v-for="item in data">
+            <img :src=item.img alt="">
+            <div class="right">
+                <p class="titles">
+                    {{ item.title }}
+                </p>
+                <p class="one">
+                    {{ item.one }}
+                </p>
+                <p class="two">
+                    {{ item.two }}
+                </p>
+                <p class="three">
+                    {{ item.num }}
+                    <img :src=item.imgs alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var vm = new Vue({
+        el:"#box",
+        data:{
+            data:[],
+            img:false
+        },
+        beforeCreate () {
+            this.img = true;  
+        },
+        mounted () {
+            this.img = false;
+            var that = this;
+            axios.get('../json/variety.json').then(function(res){
+                console.log(res);
+                that.data = res.data.content;
+                console.log(that.data);
+            }).catch(function(err){
+                console.log(err);
+            })
+        }
+    })
+</script>

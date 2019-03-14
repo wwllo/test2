@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑';
+}
+.header {
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.3rem;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+.header img {
+  float: left;
+  padding-top: 0.1rem;
+  width: 0.17rem;
+  height: 0.29rem;
+  margin-left: 0.25rem;
+}
+.header span {
+  float: right;
+  margin-right: 0.25rem;
+}
+.header span img {
+  width: 0.34rem;
+  height: 0.34rem;
+}
+.hr {
+  width: 100%;
+}
+.hr img {
+  width: 100%;
+}
+.video {
+  width: 100%;
+  margin-top: -0.04rem;
+}
+.title {
+  width: 100%;
+  display: flex;
+  padding: 0.25rem 0.25rem 0.2rem;
+  box-sizing: border-box;
+  border-bottom: 0.01rem #cccccc solid;
+}
+.title span {
+  flex: 1;
+}
+.title span img {
+  width: 0.06rem;
+  height: 0.3rem;
+}
+.title .text {
+  flex: 25;
+  font-size: 0.24rem;
+}
+#box {
+  width: 100%;
+  padding-bottom: 0.2rem;
+}
+#box .imgs {
+  width: 100%;
+}
+#box .content {
+  padding: 0.1rem 0.75rem 0.1rem 0.2rem;
+  box-sizing: border-box;
+  display: flex;
+  border-bottom: 0.01rem #cccccc solid;
+}
+#box .content img {
+  flex: 3;
+  width: 2.17rem ;
+  height: 1.46rem;
+}
+#box .content .texts {
+  flex: 4;
+  padding-left: 0.15rem;
+  box-sizing: border-box;
+}
+#box .content .texts .titles {
+  font-size: 0.24rem;
+  margin-top: 0.15rem;
+}
+#box .content .texts .img1 {
+  margin-top: 0.3rem;
+}
+#box .content .texts .img1 img {
+  width: 1.64rem;
+  height: 0.3rem;
+}

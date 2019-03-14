@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="../less/reset.css">
+    <link rel="stylesheet" href="../less/index.css">
+    <script src="../js/rem.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../imgs/index/2.png" alt="" /> CCTV手机电视
+        <span><img src="../imgs/index/icon_search@2x.png" alt=""></span>
+    </div>
+    <div class="xian"><img src="../imgs/index/icon_heng_line@2x.png" alt=""></div>
+    <div id="top">
+        <ul class="title">
+            <li class="shou">首页</li>
+            <li>直播</li>
+            <li>新闻</li>
+            <li>热剧</li>
+            <li>电影</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li class="jia"><img src="../imgs/index/arrow_go01.png" alt=""></li>
+        </ul>
+        <div class="img_">
+             <img class="img" src="../imgs/index/bg.png" alt="">
+        </div>
+        <ul class="tui">
+            <li class="shu"><img src="../imgs/index/1.png" alt=""></li>
+            <li class="re">热播推荐</li>
+            <li class="more">更多>></li>
+        </ul>
+        <hr />
+        <ul class="content">
+            <li class="nei" v-for="item in data">
+                <img class="big" :src=item.img alt="">
+                <p class="show">{{item.title}}<span><img :src=item.img1 alt="">{{item.num}}</span></p>
+                <p class="info">{{item.info}}</p>
+                <div class="bg">
+                    <img :src=item.img2 alt="">
+                    <span>{{item.span}}</span>
+                </div>
+                <div class="btn">
+                    <img :src=item.img3 alt="">
+                </div>
+            </li>
+        </ul>
+        <ul class="tui">
+            <li class="shu"><img src="../imgs/index/1.png" alt=""></li>
+            <li class="re">综艺趴</li>
+            <li class="more">更多>></li>
+        </ul>
+        <hr />
+        <div class="img_">
+            <img class="img" src="../imgs/index/21.png" alt="">
+        </div>
+        <p class="happy">快乐大本营</p>
+        <p class="bir">现场直播：月迎15岁生日，众多明星到场。。。</p>
+        <ul class="content">
+            <li class="nei" v-for="item in zong">
+                <img class="big" :src=item.img alt="">
+                <p class="show">{{item.title}}</p>
+                <p class="info">{{item.info}}</p>
+                <div class="bg">
+                    <img :src=item.img2 alt="">
+                    <span>{{item.span}}</span>
+                </div>
+                <div class="btn">
+                    <img :src=item.img3 alt="">
+                </div>
+            </li>
+        </ul>
+        <ul class="tui">
+            <li class="shu"><img src="../imgs/index/1.png" alt=""></li>
+            <li class="re">热剧连连看</li>
+            <li class="more">更多>></li>
+        </ul>
+        <hr />
+        <ul class="content">
+            <li class="nei" v-for="item in info">
+                <img class="big" :src=item.img alt="">
+                <p class="show">{{item.title}}</p>
+                <p class="info">{{item.info}}</p>
+                <div class="bg">
+                    <img :src=item.img2 alt="">
+                    <span>{{item.span}}</span>
+                </div>
+                <div class="btn">
+                    <img :src=item.img3 alt="">
+                </div>
+            </li>
+        </ul>
+        <ul class="tui">
+            <li class="shu"><img src="../imgs/index/1.png" alt=""></li>
+            <li class="re">体育竞技</li>
+            <li class="more">更多>></li>
+        </ul>
+        <hr />
+        <ul class="content">
+            <li class="nei" v-for="item in sport">
+                <img class="big" :src=item.img alt="">
+                <p class="show">{{item.title}}</p>
+                <p class="info">{{item.info}}</p>
+                <div class="btn">
+                    <img :src=item.img3 alt="">
+                </div>
+                <div class="bg1">
+                    <img :src=item.img2 alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    var vm = new Vue({
+        el: "#top",
+        data: {
+            data: [],
+            info: [],
+            zong: [],
+            sport: []
+        },
+        mounted() {
+            this.img = false;
+            var that = this;
+            axios.get('../json/index.json').then(function (res) {
+                console.log(res);
+                that.data = res.data.data;
+                that.info = res.data.info;
+                that.zong = res.data.zong;
+                that.sport = res.data.sport;
+                console.log(that.data);
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+    })
+</script>
+
+</html>
